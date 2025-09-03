@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaderboard</title>
+</head>
+<body>
+  <h1>🏆 Leaderboard</h1>
+  <ol>
+    {% for p in profiles %}
+      <li>{{ p.name }} - ⭐ {{ "%.2f"|format(p.avg_rating) }} ({{ p.num_votes }} votes)</li>
+    {% endfor %}
+  </ol>
+  <a href="{{ url_for('home') }}">⬅ Back</a>
+</body>
+</html>

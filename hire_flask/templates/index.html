@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hire App</title>
+</head>
+<body>
+  <h1>Profiles</h1>
+  <a href="{{ url_for('add_profile') }}">➕ Add Profile</a> |
+  <a href="{{ url_for('leaderboard') }}">🏆 Leaderboard</a>
+  <ul>
+    {% for p in profiles %}
+      <li>
+        <b>{{ p.name }}</b> - {{ p.occupation }} ({{ p.age }} yrs)<br>
+        Contact: {{ p.contact }}<br>
+        <form method="POST" action="{{ url_for('rate', name=p.name) }}">
+          <input type="number" name="rating" min="1" max="5" required>
+          <button type="submit">Rate</button>
+        </form>
+        <a href="{{ url_for('chat', name=p.name) }}">💬 Chat</a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

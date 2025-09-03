@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat with {{ name }}</title>
+</head>
+<body>
+  <h1>💬 Chat with {{ name }}</h1>
+  <div style="border:1px solid #ccc;padding:10px;margin-bottom:10px;">
+    {% for m in messages %}
+      <p><b>{{ m.sender }}:</b> {{ m.message }} <small>({{ m.timestamp }})</small></p>
+    {% endfor %}
+  </div>
+
+  <form method="POST">
+    <input type="text" name="sender" placeholder="Your name" required><br>
+    <input type="text" name="message" placeholder="Message" required><br>
+    <button type="submit">Send</button>
+  </form>
+
+  <a href="{{ url_for('home') }}">⬅ Back</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Jashandeep",
+        "age": "2",
+        "address": "2",
+        "contact": "2",
+        "occupation": "2",
+        "image": "default.png",
+        "rating_sum": 0,
+        "num_votes": 0,
+        "hire_count": 0,
+        "achievements": []
+    }
+]
